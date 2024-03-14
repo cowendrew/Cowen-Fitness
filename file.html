@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cowen Fitness</title>
+    <script src="https://www.paypal.com/sdk/js?client-id=BAAkk-1YGlFLw9JXlwlieujXsAtQqPR1NgUZQ9mQl8PmFxAwoNXiV_mzeISHLK-XuU1cvyxWzdLHwhPz4E&components=hosted-buttons&enable-funding=venmo&currency=USD"></script>
+</head>
+<body>
+
+<div class="homepage">
+    <h1>Welcome to Cowen Fitness</h1>
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#get-started">Get Started</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</div>
+
+<section id="about" class="box">
+    <div class="container">
+        <h2>About Me</h2>
+        <div class="image-container">
+            <img src="IMG_9283.jpg" alt="Personal Trainer" style="width: 300px; height: auto;">
+        </div>
+        <p>Welcome to Cowen Fitness! My name is Drew Cowen and I am a NASM certified personal trainer with a passion for health and wellness that drives me to empower individuals like you to unleash your full potential and lead a balanced, active lifestyle.</p>
+    </div>
+</section>
+
+<section id="services" class="box">
+    <div class="container">
+        <h2>Services</h2>
+
+        <div class="package" style="order: -1;">
+            <h3>Free Consultation</h3>
+            <p><strong>Schedule your consultation:</strong> Book a free consultation session today that includes an initial assessment of your current fitness level and an in-depth discussion of your fitness goals and challenges. Together, we will choose a package that best suits your needs.</p>
+            <form id="consultation-form" onsubmit="return showConfirmation()">
+                <label for="date">Select a Date:</label>
+                <input type="date" id="date" name="date" required>
+                <label for="hour">Select an Hour:</label>
+                <select id="hour" name="hour">
+                    <!-- Options for hours from 6 AM to 10 PM -->
+                    <option value="6">6:00 AM</option>
+                    <option value="7">7:00 AM</option>
+                    <option value="8">8:00 AM</option>
+                    <option value="9">9:00 AM</option>
+                    <option value="10">10:00 AM</option>
+                    <option value="11">11:00 AM</option>
+                    <option value="12">12:00 PM</option>
+                    <option value="13">1:00 PM</option>
+                    <option value="14">2:00 PM</option>
+                    <option value="15">3:00 PM</option>
+                    <option value="16">4:00 PM</option>
+                    <option value="17">5:00 PM</option>
+                    <option value="18">6:00 PM</option>
+                    <option value="19">7:00 PM</option>
+                    <option value="20">8:00 PM</option>
+                    <option value="21">9:00 PM</option>
+                    <option value="22">10:00 PM</option>
+                </select>
+                <label for="minute">Select a Minute:</label>
+                <select id="minute" name="minute">
+                    <!-- Options for minutes with intervals of 15 -->
+                    <option value="0">00</option>
+                    <option value="15">15</option>
+                    <option value="30">30</option>
+                    <option value="45">45</option>
+                </select>
+                <button type="submit">Book Consultation</button>
+            </form>
+        </div>
+
+        <div class="package">
+            <h3>Starter Package</h3>
+            <ul>
+                <li>Personalized Workout Plan: A tailor-made monthly exercise program designed to help you build a solid foundation of strength, endurance, and flexibility.</li>
+                <li>Nutritional Guidance: Basic recommendations to support your fitness goals and fuel your body for optimal performance.</li>
+                <li>Weekly Check-Ins via Zoom: Regular progress assessments and adjustments to your workout and nutrition plan based on your feedback and results.</li>
+                <li>Unlimited Text Support: Have questions or need guidance between sessions? Reach out anytime for support and motivation.</li>
+                <li>Price: $99.99 per month</li>
+            </ul>
+        </div>
+
+        <div class="package">
+            <h3>Transformation Package</h3>
+            <ul>
+                <li>Includes everything in the Starter Package PLUS+</li>
+                <li>Personal Training Sessions: 1 Weekly 30 minute one-on-one virtual training session focused on technique, form, and progression.</li>
+                <li>Priority Support via Zoom/FaceTime: Access to your trainer for guidance, accountability, and motivation whenever you need it, ensuring you stay on track towards your goals.</li>
+                <li>Price: $199.99 per month</li>
+            </ul>
+        </div>
+
+        <div class="package">
+            <h3>Elite Performance Package</h3>
+            <ul>
+                <li>Includes everything in the Transformation Package PLUS+</li>
+                <li>Individualized Training Program: A WEEKLY comprehensive training program mapped out based on your specific goals, abilities, and preferences.</li>
+                <li>Personal Training Sessions: 3 Weekly 30 minute one-on-one virtual training sessions focusing on technique, form, and progression.</li>
+                <li>Price: $299.99 per month</li>
+            </ul>
+        </div>
+
+    </div>
+</section>
+
+<section id="get-started" class="box">
+    <div class="container">
+        <h2>Get Started After Your Free Consult</h2>
+        <p>Ready to begin your fitness journey with Cowen Fitness? Choose your plan below and proceed to payment.</p>
+        <div id="paypal-container-24MFLMC2TZY8Y"></div>
+    </div>
+</section>
+
+<section id="contact" class="box">
+    <div class="container">
+        <h2>Contact Me</h2>
+        <div class="contact-info">
+            <p>Email: <a href="mailto:drewcowenfitness@gmail.com">drewcowenfitness@gmail.com</a></p>
+            <p>Phone: 318-266-5093</p>
+        </div>
+    </div>
+</section>
+
+<!-- Modal -->
+<div id="confirmationModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <p>Your consultation has been scheduled successfully!</p>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 Cowen Fitness. All rights reserved.</p>
+</footer>
+
+<script>
+    function showConfirmation() {
+        var date = document.getElementById("date").value;
+        var hour = document.getElementById("hour").value;
+        var minute = document.getElementById("minute").value;
+        var time = hour + ":" + minute;
+        var message = "Your consultation has been scheduled for " + date + " at " + time + ". Thank you!";
+        openModal();
+        return false; // Prevent form submission
+    }
+
+    function openModal() {
+        var modal = document.getElementById("confirmationModal");
+        modal.style.display = "block";
+    }
+
+    function closeModal() {
+        var modal = document.getElementById("confirmationModal");
+        modal.style.display = "none";
+    }
+
+    // Close the modal when clicking outside of it
+    window.onclick = function(event) {
+        var modal = document.getElementById("confirmationModal");
+        if (event.target == modal) {
+            closeModal();
+        }
+    };
+
+    // Add event listener to date input to close modal on selection
+    document.getElementById("date").addEventListener("change", function() {
+        closeModal();
+    });
+
+    // Add event listener to hour inputs to close modal on selection
+    document.getElementById("hour").addEventListener("change", function() {
+        closeModal();
+    });
+
+    // Add event listener to minute inputs to close modal on selection
+    document.getElementById("minute").addEventListener("change", function() {
+        closeModal();
+    });
+
+    // Scroll to sections
+    document.querySelectorAll('nav ul li a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const sectionID = this.getAttribute('href').substring(1);
+            document.getElementById(sectionID).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+    
+    paypal.HostedButtons({
+        hostedButtonId: "24MFLMC2TZY8Y",
+    }).render("#paypal-container-24MFLMC2TZY8Y")
+</script>
+
+</body>
+</html>
