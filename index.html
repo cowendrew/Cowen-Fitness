@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cowen Fitness</title>
-    <script src="https://www.paypal.com/sdk/js?client-id=BAAkk-1YGlFLw9JXlwlieujXsAtQqPR1NgUZQ9mQl8PmFxAwoNXiV_mzeISHLK-XuU1cvyxWzdLHwhPz4E&components=hosted-buttons&enable-funding=venmo&currency=USD"></script>
+    <script src="https://www.paypal.com/sdk/js?client-id=BAAkk-1YGlFLw9JXlwlieujXsAtQqPR1NgUZQ9mQl8PmFxAwoNXiV_mzeISHLK-XuU1cvyxWzdLHwhPz4E&components=hosted-buttons&enable-funding=venmo&currency=USD&disable-funding=paylater"></script>
 </head>
 <body>
 
@@ -38,39 +38,9 @@
         <div class="package" style="order: -1;">
             <h3>Free Consultation</h3>
             <p><strong>Schedule your consultation:</strong> Book a free consultation session today that includes an initial assessment of your current fitness level and an in-depth discussion of your fitness goals and challenges. Together, we will choose a package that best suits your needs.</p>
-            <form id="consultation-form" onsubmit="return showConfirmation()">
-                <label for="date">Select a Date:</label>
-                <input type="date" id="date" name="date" required>
-                <label for="hour">Select an Hour:</label>
-                <select id="hour" name="hour">
-                    <!-- Options for hours from 6 AM to 10 PM -->
-                    <option value="6">6:00 AM</option>
-                    <option value="7">7:00 AM</option>
-                    <option value="8">8:00 AM</option>
-                    <option value="9">9:00 AM</option>
-                    <option value="10">10:00 AM</option>
-                    <option value="11">11:00 AM</option>
-                    <option value="12">12:00 PM</option>
-                    <option value="13">1:00 PM</option>
-                    <option value="14">2:00 PM</option>
-                    <option value="15">3:00 PM</option>
-                    <option value="16">4:00 PM</option>
-                    <option value="17">5:00 PM</option>
-                    <option value="18">6:00 PM</option>
-                    <option value="19">7:00 PM</option>
-                    <option value="20">8:00 PM</option>
-                    <option value="21">9:00 PM</option>
-                    <option value="22">10:00 PM</option>
-                </select>
-                <label for="minute">Select a Minute:</label>
-                <select id="minute" name="minute">
-                    <!-- Options for minutes with intervals of 15 -->
-                    <option value="0">00</option>
-                    <option value="15">15</option>
-                    <option value="30">30</option>
-                    <option value="45">45</option>
-                </select>
-                <button type="submit">Book Consultation</button>
+            <script id="setmore_script" type="text/javascript" src="https://storage.googleapis.com/fullintegration-live/webComponentAppListing/Container/setmoreIframeLive.js"></script><a style="float:none; " id="Setmore_button_iframe"  href="https://booking.setmore.com/scheduleappointment/753d0621-adbf-4940-b870-8bf259cc5593"><img border="none" src="https://storage.googleapis.com/full-assets/setmore/images/1.0/Settings/book-now-blue.svg" alt="Book an appointment with Drew using Setmore"/></a>
+                 
+
             </form>
         </div>
 
@@ -130,7 +100,7 @@
 <div id="confirmationModal" class="modal">
     <div class="modal-content">
         <span class="close" onclick="closeModal()">&times;</span>
-        <p>Your consultation has been scheduled successfully!</p>
+        <p>Your appointment request has been submitted!</p>
     </div>
 </div>
 
@@ -139,16 +109,14 @@
 </footer>
 
 <script>
-    function showConfirmation() {
-        var date = document.getElementById("date").value;
-        var hour = document.getElementById("hour").value;
-        var minute = document.getElementById("minute").value;
-        var time = hour + ":" + minute;
-        var message = "Your consultation has been scheduled for " + date + " at " + time + ". Thank you!";
-        openModal();
-        return false; // Prevent form submission
-    }
+    // Render PayPal Button
+    paypal.HostedButtons({
+        hostedButtonId: "24MFLMC2TZY8Y",
+        shipping_preference: "NO_SHIPPING" // Specify no shipping
+    }).render("#paypal-container-24MFLMC2TZY8Y")
+</script>
 
+<script>
     function openModal() {
         var modal = document.getElementById("confirmationModal");
         modal.style.display = "block";
@@ -167,21 +135,6 @@
         }
     };
 
-    // Add event listener to date input to close modal on selection
-    document.getElementById("date").addEventListener("change", function() {
-        closeModal();
-    });
-
-    // Add event listener to hour inputs to close modal on selection
-    document.getElementById("hour").addEventListener("change", function() {
-        closeModal();
-    });
-
-    // Add event listener to minute inputs to close modal on selection
-    document.getElementById("minute").addEventListener("change", function() {
-        closeModal();
-    });
-
     // Scroll to sections
     document.querySelectorAll('nav ul li a').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
@@ -192,10 +145,6 @@
             });
         });
     });
-    
-    paypal.HostedButtons({
-        hostedButtonId: "24MFLMC2TZY8Y",
-    }).render("#paypal-container-24MFLMC2TZY8Y")
 </script>
 
 </body>
